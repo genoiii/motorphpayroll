@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard | Employee Portal</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <script type="text/javascript" src="script.js" defer></script>
+        
+    </head>
+
+    <body>
+        <!-- Notification -->
+        <p id="Notification-message"></p>
+        
+        <div class="grid-container">
+
+             <!-- Sidebar -->                
+            <div class="sidebar">
+                
+                <div>
+                    <!-- <div class="img-container">
+                        <img src="images/MotorPH Logo.png" alt="MotorPH" class="logo">
+                    </div> -->
+                    <a href="#dashboard.html" class="item">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 32 32">
+                            <path 
+                                fill="currentColor" 
+                                d="M29 9H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3h26a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3M3 2a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h26a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
+                            <path 
+                                fill="currentColor" 
+                                d="M12 20H3a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3m-9-7a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                            <path 
+                                fill="currentColor" 
+                                d="M12 31H3a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3m-9-7a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                            <path 
+                                fill="currentColor" 
+                                d="M29 31h-9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3m-9-18a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V14a1 1 0 0 0-1-1z"/>
+                        </svg>
+                    <p class="small">Dashboard</p></a>  
+                    <a href="#profile.html" class="item">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 24 24">
+                            <path 
+                                fill="currentColor"
+                                d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"/>
+                        </svg>
+                        <p class="small">Profile</p></a>           
+                    <a href="#attendance.html" class="item">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M11.917 6A6.002 6.002 0 0 0 0 7a6 6 0 0 0 7 5.917V11.9q-.486.1-1 .1a5 5 0 1 1 4.9-6zM7.72 7.05A.5.5 0 0 0 7.5 7H6.002V4.5l-.009-.09a.5.5 0 0 0-.991.09v3l.008.09a.5.5 0 0 0 .492.41H7.17c.124-.351.311-.672.549-.95M14 7h-4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m-.5 7h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1m0-2h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1m0-2h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1"/>
+                            </svg>
+                        <p class="small">Attendance</p></a>
+                    <a href="leave.html" class="item">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 24 24">                    
+                            <path 
+                                fill="currentColor" 
+                                d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/>
+                        </svg>
+                        <p class="small">Leave</p></a>
+                    <a href="payslip.html" class="item">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 24 24">                    
+                            <path 
+                                fill="currentColor" 
+                                d="M16 3a3 3 0 0 1 2.995 2.824L19 6v10h.75c.647 0 1.18.492 1.244 1.122l.006.128V19a3 3 0 0 1-2.824 2.995L18 22H8a3 3 0 0 1-2.995-2.824L5 19V9H3.25a1.25 1.25 0 0 1-1.244-1.122L2 7.75V6a3 3 0 0 1 2.824-2.995L5 3zm0 2H7v14a1 1 0 1 0 2 0v-1.75c0-.69.56-1.25 1.25-1.25H17V6a1 1 0 0 0-1-1m3 13h-8v1c0 .35-.06.687-.17 1H18a1 1 0 0 0 1-1zm-7-6a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2zm2-4a1 1 0 1 1 0 2h-4a1 1 0 0 1 0-2zM5 5a1 1 0 0 0-.993.883L4 6v1h1z"/>
+                        </svg>
+                        <p class="small">Payslip</p></a>
+                </div>
+                <div>
+                    <a href="index.html" class="item";">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 24 24">
+                            <path 
+                                fill="currentColor" 
+                                d="M14.945 1.25c-1.367 0-2.47 0-3.337.117c-.9.12-1.658.38-2.26.981c-.524.525-.79 1.17-.929 1.928c-.135.737-.161 1.638-.167 2.72a.75.75 0 0 0 1.5.008c.006-1.093.034-1.868.142-2.457c.105-.566.272-.895.515-1.138c.277-.277.666-.457 1.4-.556c.755-.101 1.756-.103 3.191-.103h1c1.436 0 2.437.002 3.192.103c.734.099 1.122.28 1.4.556c.276.277.456.665.555 1.4c.102.754.103 1.756.103 3.191v8c0 1.435-.001 2.436-.103 3.192c-.099.734-.279 1.122-.556 1.399s-.665.457-1.399.556c-.755.101-1.756.103-3.192.103h-1c-1.435 0-2.436-.002-3.192-.103c-.733-.099-1.122-.28-1.399-.556c-.243-.244-.41-.572-.515-1.138c-.108-.589-.136-1.364-.142-2.457a.75.75 0 1 0-1.5.008c.006 1.082.032 1.983.167 2.72c.14.758.405 1.403.93 1.928c.601.602 1.36.86 2.26.982c.866.116 1.969.116 3.336.116h1.11c1.368 0 2.47 0 3.337-.116c.9-.122 1.658-.38 2.26-.982s.86-1.36.982-2.26c.116-.867.116-1.97.116-3.337v-8.11c0-1.367 0-2.47-.116-3.337c-.121-.9-.38-1.658-.982-2.26s-1.36-.86-2.26-.981c-.867-.117-1.97-.117-3.337-.117z"/><path fill="currentColor" d="M15 11.25a.75.75 0 0 1 0 1.5H4.027l1.961 1.68a.75.75 0 1 1-.976 1.14l-3.5-3a.75.75 0 0 1 0-1.14l3.5-3a.75.75 0 1 1 .976 1.14l-1.96 1.68z"/>
+                        </svg>
+                        <p class="small">Logout</p></a>   
+                </div>               
+                         
+            </div>                    
+            
+            <!-- Heading -->
+            <div class="heading">
+                <h1>Dashboard</h1>
+                <p>Welcome to the Employee Portal</p>
+            </div>
+
+            <!-- CONTENT -->
+            <!-- Attendance Summary -->
+            <div class="main-content ">
+                <div class="content-container">            
+                    <div class="content-heading">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M11.917 6A6.002 6.002 0 0 0 0 7a6 6 0 0 0 7 5.917V11.9q-.486.1-1 .1a5 5 0 1 1 4.9-6zM7.72 7.05A.5.5 0 0 0 7.5 7H6.002V4.5l-.009-.09a.5.5 0 0 0-.991.09v3l.008.09a.5.5 0 0 0 .492.41H7.17c.124-.351.311-.672.549-.95M14 7h-4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m-.5 7h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1m0-2h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1m0-2h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1"/>
+                        </svg>
+                        <h2>Attendance Summary</h2>                
+                    </div>
+                    <div class="content-1">
+                        <div>
+                            <h4>Present Days</h4>
+                            <h3>7</h3>
+                        </div>
+                        <div>
+                            <h4>Payable Days</h4>
+                            <h3>10</h3>
+                        </div>
+                    </div>                    
+                </div>
+    
+                <!-- Leave Summary -->
+                <div class="content-container">
+                    <div class="content-heading">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 24 24">                    
+                        <path 
+                            fill="currentColor" 
+                            d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/>
+                    </svg>
+                    <div >
+                        <h2>Leave Summary</h2>                
+                    </div>
+                    </div>
+                    <div class="content-1">
+                        <div>
+                            <h4>Balance Available</h4>
+                            <h3>7</h3>
+                        </div>
+        
+                        <div>
+                            <h4>Absent Days</h4>
+                            <h3>10</h3>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+    
+                <!-- Payslip -->
+                <div class="content-container">
+                    <div class="content-heading">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 24 24">                    
+                        <path 
+                            fill="currentColor" 
+                            d="M16 3a3 3 0 0 1 2.995 2.824L19 6v10h.75c.647 0 1.18.492 1.244 1.122l.006.128V19a3 3 0 0 1-2.824 2.995L18 22H8a3 3 0 0 1-2.995-2.824L5 19V9H3.25a1.25 1.25 0 0 1-1.244-1.122L2 7.75V6a3 3 0 0 1 2.824-2.995L5 3zm0 2H7v14a1 1 0 1 0 2 0v-1.75c0-.69.56-1.25 1.25-1.25H17V6a1 1 0 0 0-1-1m3 13h-8v1c0 .35-.06.687-.17 1H18a1 1 0 0 0 1-1zm-7-6a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2zm2-4a1 1 0 1 1 0 2h-4a1 1 0 0 1 0-2zM5 5a1 1 0 0 0-.993.883L4 6v1h1z"/>
+                    </svg>
+                    <h2>Payslip</h2>
+                    </div>
+                    <div class="content-1">
+                        <p>
+                            27-Sep-2024 <br>
+                            27-Sep-2024 <br>
+                            13-Sep-2024 <br>
+                            30-Aug-2024 <br>
+                            16-Aug-2024 <br>
+                            02-Aug-2024 <br>
+                            19-Jul-2024 <br>
+                            05-Jul-2024 <br>
+                            21-Jun-2024 <br>
+                            07-Jun-2024 <br>
+                            24-May-2024 <br>
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Payroll -->
+                <div class="content-container">
+                    <div class="content-heading">
+                        <h2>Payroll</h2>
+                    </div>
+                    <div class="content-heading">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M7.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 7.75 1"/>
+                        </svg>
+                        <div class="content-2">                            
+                            <h4>Upcoming</h4>
+                            <h3>Fri-25-Oct-2024</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="content-heading">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M7.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 7.75 1"/>
+                        </svg>
+                        <div class="content-2">                            
+                            <h4>Current</h4>
+                            <h3>Fri-11-Oct-2024</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="content-heading">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M7.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 7.75 1"/>
+                        </svg>
+                        <div class="content-2">                            
+                            <h4>Previous</h4>
+                            <h3>Fri-27-Sep-2024</h3>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Events -->
+                <div class="content-container">
+                    <div class="content-heading">
+                        <h2>Events</h2>
+                    </div>
+                    <div>
+                        11 Oct
+                    </div>
+                    <div>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 15 15">
+                            <path 
+                                fill="currentColor" 
+                                d="M9.875 7.5a2.375 2.375 0 1 1-4.75 0a2.375 2.375 0 0 1 4.75 0"/>                        
+                        </svg>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M7.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 7.75 1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        Pay Date
+                    </div>
+                    <div>
+                        16 Oct
+                    </div>
+                    <div>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 15 15">
+                            <path 
+                                fill="currentColor" 
+                                d="M9.875 7.5a2.375 2.375 0 1 1-4.75 0a2.375 2.375 0 0 1 4.75 0"/>                        
+                        </svg>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M7.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 7.75 1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        Training
+                    </div>
+                    <div>
+                        27 Oct
+                    </div>
+                    <div>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 15 15">
+                            <path 
+                                fill="currentColor" 
+                                d="M9.875 7.5a2.375 2.375 0 1 1-4.75 0a2.375 2.375 0 0 1 4.75 0"/>                        
+                        </svg>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 16 16">
+                            <path 
+                                fill="currentColor" 
+                                d="M7.75 1a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 7.75 1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        My Birthday
+                    </div>
+                </div>
+    
+                <!-- Current Pay Period -->
+                <div class="content-container">
+                    <div class="content-heading">
+                        <h2>Current Pay Period</h2>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                <table class="table-condensed table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                        <th colspan="7">
+                                            <span class="btn-group">
+                                                <a class="btn"><i class="icon-left"></i></a>
+                                                <a class="btn active">October 2024</a>
+                                                <a class="btn"><i class="icon-right"></i></a>
+                                            </span>
+                                        </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Su</th>
+                                            <th>Mo</th>
+                                            <th>Tu</th>
+                                            <th>We</th>
+                                            <th>Th</th>
+                                            <th>Fr</th>
+                                            <th>Sa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="muted">29</td>
+                                            <td class="muted">30</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>                                    
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td>15</td>
+                                            <td>16</td>
+                                            <td>17</td>
+                                            <td>18</td>
+                                            <td>19</td>
+                                        </tr>
+                                        <tr>                                    
+                                            <td class="btn-primary"><strong>20</strong></td>
+                                            <td>21</td>
+                                            <td>22</td>
+                                            <td>23</td>
+                                            <td>24</td>
+                                            <td>25</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>28</td>
+                                            <td>29</td>
+                                            <td class="muted">1</td>
+                                            <td class="muted">2</td>
+                                            <td class="muted">3</td>
+                                            <td class="muted">4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+                    
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2020 MotorPH Payroll</p>
+            </footer>
+        </div>
+
+       
+
+    </body>
+</html>
