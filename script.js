@@ -17,7 +17,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent form submission to handle login logic
     if (username_input.value === 'admin' && password_input.value === 'password') {
       // Redirect to another page on successful login
-      window.location.href = 'payslip.html'; // Change 'success.html' to your target page
+      window.location.href = 'dashboard.html'; // Change 'success.html' to your target page
     } else {
       errors.push('Invallid username or password')
       password_input.parentElement.classList.add('incorrect')
