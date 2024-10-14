@@ -30,8 +30,19 @@ html{
 }
 
 body{
-    min-height: 100vh;
-    background-color: var(--base-color);
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    background-color: var(--base-color);    
+}
+
+button{
+    font:inherit;
+    color: inherit;    
+    border: none;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
 }
 
 .login-page{
@@ -126,17 +137,10 @@ form input::placeholder{
 
 form button{
     margin-top: 10px;
-    border: none;
     border-radius: 10px;
     padding: 0.85em 4em;
-    background-color: var(--accent-color);
-    color: var(--default-color);
-    font:inherit;
     font-weight: 600;
     font-size: 1.2rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 150ms ease;
 }
 form button:hover{
     background-color: var(--text-color);
@@ -173,9 +177,30 @@ form div.incorrect input{
     grid-template: auto 1fr auto/ auto 1fr; 
 }
 
+.main-page{
+    display: grid;    
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'Asidebar Aheading'
+        'Asidebar Amain-content'
+        'Asidebar Afooter';
+}
+
+/* Heading */
+.heading{
+    grid-area: Aheading;
+    background-color: var(--default-color);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    color: var(--text-color);
+}
+
 /* Sidebar */
 .sidebar{
-    grid-area: 1/1/4/1;
+    grid-area: Asidebar;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,20 +246,12 @@ form div.incorrect input{
     color: var(--text-color);
 }
 
-/* Heading */
-.heading{
-    grid-area: 1/2;
-    background-color: var(--default-color);
-    display: flex;
-    align-items: center;
-    text-align: left;
-    padding: 20px;
-    color: var(--text-color);
-}
+
 
 /* Content */
+
+/* Dashboard Content */
 .main-content{
-    grid-area: 2/2/2/2;
     display: grid;
     width: fit-content;
     height: fit-content;
@@ -289,9 +306,114 @@ form div.incorrect input{
 
 /* Footer */
 footer{
-    grid-area: 3/2/4/2;
+    grid-area: Afooter;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+}
+
+/* ==== Payroll Page ==== */   
+.payroll-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 
+        'announcement'
+        'filter'
+        'table';
+    background: var(--default-color);
+}
+
+
+.payroll-content .announcement{
+    grid-area: announcement;
+    display: flex;
+    background: var(--base-color);
+    padding: 30px;
+    padding-left: 50px;
+    gap: 20px;
+}
+
+.payroll-content .announcement svg{
+    fill: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    margin-top: var(--small-font-size);
+    /* cursor: pointer;
+    transition: 150ms ease; */
+}
+.payroll-content .announcement .info{
+    display: block;
+    text-align: left;
+}
+
+.payroll-content .announcement .info h3{
+    padding-block-end: 6px;
+}
+
+.payroll-content .announcement .info p{
+    padding-block-end: 12px;
+}
+
+.payroll-content .announcement .info button{
+    border-radius: 10px;
+    padding: 0.85em 4em;
+    color: var(--default-color);
+    font:inherit;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.payroll-content .filter{    
+    grid-area: filter;
+    display: flex;
+    justify-content: space-between;
+    background: var(--default-color);
+    padding: 20px;
+    padding-inline-start: 200px;
+}
+
+.payroll-content .filter button{    
+    border: 2px solid var(--text-color);
+    background: var(--default-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 150ms ease;
+}   
+
+.payroll-content .filter .container{
+    display: flex;
+    gap: 20px;    
+}
+
+.payroll-content .filter .border{
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding-inline: 12px;
+    display: flex;
+    align-items: center;    
+}
+
+.payroll-content .filter select{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+.payroll-content .table{
+    grid-area: table;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background: var(--default-color);
+    padding: 20px;
+    text-align: left;
+}
+
+.payroll-content .table button{
+    border: 2px solid var(--text-color);
+    background: var(--default-color);
+    padding: .25em 1em;
 }
