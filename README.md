@@ -1,3 +1,7 @@
+#Login Credentials
+Username: admin
+Password: password
+
 # A3101_WebSys
 Link to your project requirements document: https://docs.google.com/document/d/1KLpz1i86sALzyITqRd5mJIJSyWTZHJXI1ZHz7I1JPrE/edit?usp=sharing
 
