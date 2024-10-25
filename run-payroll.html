@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run-Payroll | Admin Portal</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="text/javascript" src="scripts/sample.js" defer></script>
+</head>
+
+<body class="run-payroll-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="title">
+            <a href="payroll.html">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width=".5em" 
+                height=".5em" 
+                viewBox="0 0 1024 1024">
+                <path 
+                    fill="currentColor" 
+                    d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64"/>
+                <path 
+                    fill="currentColor" 
+                    d="m237.248 512l265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312z"/>
+            </svg>
+            </a>            
+            <h1>Run Payroll</h1>
+        </div>
+        <div class="pay-period">
+            <label for="pay-period">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="1em" 
+                    height="1em" 
+                    viewBox="0 0 24 24">
+                    <path 
+                        fill="currentColor" 
+                        d="M9 1v2h6V1h2v2h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1zm11 10H4v8h16zM8 13v2H6v-2zm5 0v2h-2v-2zm5 0v2h-2v-2zM7 5H4v4h16V5h-3v2h-2V5H9v2H7z"/>
+                </svg>
+                <p>Pay Period:</p>
+            </label>
+            <div class="date">
+                <h4>Sept 23 - Oct 06</h4>
+            </div>            
+        </div>        
+    </header>
+
+    <!-- Heading -->
+    <div class="heading">
+        <div class="stages-heading">
+            <div class="active" run-payroll-heading>
+                <h2>Pay Period & Employee</h2>
+                <h4>Select Employee to include in this Payroll</h4>
+            </div>
+            <div run-payroll-heading>
+                <h2>Attendance</h2>
+                <h4>Check employee total hours, overtime and additional earning</h4>
+            </div>
+            <div run-payroll-heading>
+                <h2>Leave</h2>
+                <h4>Check employee leave and time off</h4>
+            </div>
+            <div run-payroll-heading>
+                <h2>Payroll Preview</h2>
+                <h4>Take time to double check and review the total net wages and the total payroll</h4>
+            </div>
+            <div run-payroll-heading>
+                <h2>Payroll Submitted</h2>
+                <h4>22 employee will be paid at October 11. Make sure the funds are available.</h4>
+            </div>
+        </div>
+        <div class="search-bar">
+            <label for="search-employee-input">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="1em" 
+                    height="1em" 
+                    viewBox="0 0 24 24">
+                    <path 
+                        fill="currentColor" 
+                        d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/>
+                </svg>
+            </label>
+            <input type="text" name="search-employee" id="search-employee-input" placeholder="Search Employee">
+        </div>
+    </div>
+
+    <aside class="aside">
+        <!-- <div class="stages">
+            <svg 
+                id="stage-success-icon"
+                xmlns="http://www.w3.org/2000/svg" 
+                width="1em" 
+                height="1em" 
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+                class="hide">
+                <defs>
+                    <mask id="ipSCheckOne0">
+                        <g fill="none" stroke-linejoin="round" stroke-width="4">
+                        <path 
+                            fill="#fff" 
+                            stroke="#fff" 
+                            d="M24 44a19.94 19.94 0 0 0 14.142-5.858A19.94 19.94 0 0 0 44 24a19.94 19.94 0 0 0-5.858-14.142A19.94 19.94 0 0 0 24 4A19.94 19.94 0 0 0 9.858 9.858A19.94 19.94 0 0 0 4 24a19.94 19.94 0 0 0 5.858 14.142A19.94 19.94 0 0 0 24 44Z"/>
+                        <path 
+                            stroke="#000" 
+                            stroke-linecap="round" 
+                            d="m16 24l6 6l12-12"/>
+                        </g>
+                    </mask>
+                </defs>
+                <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#ipSCheckOne0)"/>
+            </svg>
+        </div> -->
+        <div class="stages highlight">
+            <svg
+                id="stage-1-icon"  
+                xmlns="http://www.w3.org/2000/svg" 
+                width="1em" 
+                height="1em" 
+                viewBox="0 0 24 24"
+                fill="white">
+                <g 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1.5"                    >
+                    <path 
+                        d="M12.5 17V7l-2 2"/>
+                    <circle cx="12" cy="12" r="9"/>
+                </g>
+            </svg>
+            <p>Pay Period & Employee</p>
+        </div>
+        <div id="stage-1" class="stages-description active" run-payroll-stage-description>
+            <p class="" >Select the employees you want to include in this payroll</p>
+        </div>
+        <div class="stages">
+            <svg
+                id="stage-2-icon" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="1em" 
+                height="1em" 
+                viewBox="0 0 24 24">
+                <g 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path 
+                        d="M9.5 9.5a2.5 2.5 0 1 1 4.268 1.768l-3.829 3.828a1.5 1.5 0 0 0-.439 1.06V17h5"/>
+                </g>
+            </svg>
+            <p>Attendance</p>
+        </div>
+        <div ID="stage-2" class="stages-description" run-payroll-stage-description>
+            <p>Review employees total working hours</p>
+        </div>
+        <div class="stages">
+            <svg
+                id="stage-3-icon" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="1em" 
+                height="1em" 
+                viewBox="0 0 24 24">
+                <g 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M10 16.236A3 3 0 1 0 12 11l3-4h-5"/>
+                </g>
+            </svg>
+            <p>Leave</p>
+        </div>
+        <div ID="stage-3" class="stages-description" run-payroll-stage-description>
+            <p>Review employees total time off</p>
+        </div>
+        <div class="stages">
+            <svg 
+                id="stage-4-icon"
+                xmlns="http://www.w3.org/2000/svg" 
+                width="1em" 
+                height="1em" 
+                viewBox="0 0 24 24">
+                <g 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="m10.5 7l-1.272 4.45A2 2 0 0 0 11.152 14H14.5m0 0v-4m0 4v3"/>
+                </g>
+            </svg>
+            <p>Review Payroll</p>
+        </div>
+        <div ID="stage-4" class="stages-description" run-payroll-stage-description>
+            <p>Review the total payroll</p>
+        </div>
+        <div class="stages">
+            <svg 
+                id="stage-5-icon"
+                xmlns="http://www.w3.org/2000/svg" 
+                width="1em" 
+                height="1em" 
+                viewBox="0 0 24 24">
+                <g 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M9.5 16.236a3 3 0 1 0 0-4.472L10.5 7h4"/>
+                </g>
+            </svg>
+            <p>Generate Payroll</p>
+        </div>
+        <div ID="stage-5" class="stages-description" run-payroll-stage-description>
+            <p>Succesfully run the payroll</p>
+        </div>
+    </aside>
+
+    <!-- Content -->
+    <!-- Table -->
+    <div class="run-payroll">
+        <div id="content-1" class="table active" run-payroll-content>
+            <table>
+                <tr>
+                    <th>Pay Runs</th>
+                    <th>Pay Date</th>
+                    <th>Employees</th>
+                    <th>Total Payment</th>
+                    <th>Status</th>
+                    <th>Approved Date</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Aug 26th - Sept 8th</td>
+                    <td>13th Sept 2024</td>
+                    <td>22</td>
+                    <td>₱123,000</td>
+                    <td>Late</td>
+                    <td>N/A</td>
+                    <td><button type="button">Run Late Payroll</button></td>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Sept 9th - Sept 22th</td>
+                    <td>27th Sept 2024</td>
+                    <td>22</td>
+                    <td>₱23,000</td>
+                    <td>Draft</td>
+                    <td>N/A</td>
+                    <td><button type="button">Setup</button></td>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Aug 12th - Aug 25th</td>
+                    <td>30th Aug 2024</td>
+                    <td>22</td>
+                    <td>₱225,000</td>
+                    <td>Paid</td>
+                    <td>29th Aug 2024</td>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Jul 29th - Aug 11th</td>
+                    <td>16th Aug 2024</td>
+                    <td>22</td>
+                    <td>₱182,000</td>
+                    <td>Paid</td>
+                    <td>16th Aug 2024</td>
+                </tr>
+            </table>
+        </div>
+        <div id="content-2" class="table" run-payroll-content>   
+            <table>
+                <tr>
+                    <th>Pay Runs</th>
+                    <th>Pay Date</th>
+                    <th>Employees</th>
+                    <th>Total Payment</th>
+                    <th>Status</th>
+                    <th>Approved Date</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Aug 26th - Sept 8th</td>
+                    <td>13th Sept 2024</td>
+                    <td>22</td>
+                    <td>₱123,000</td>
+                    <td>Late</td>
+                    <td>N/A</td>
+                    <td><button type="button">Run Late Payroll</button></td>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Sept 9th - Sept 22th</td>
+                    <td>27th Sept 2024</td>
+                    <td>22</td>
+                    <td>₱23,000</td>
+                    <td>Draft</td>
+                    <td>N/A</td>
+                    <td><button type="button">Setup</button></td>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Aug 12th - Aug 25th</td>
+                    <td>30th Aug 2024</td>
+                    <td>22</td>
+                    <td>₱225,000</td>
+                    <td>Paid</td>
+                    <td>29th Aug 2024</td>
+                </tr>
+                <tr>
+                    <td>Bimonthly Salary: Jul 29th - Aug 11th</td>
+                    <td>16th Aug 2024</td>
+                    <td>22</td>
+                    <td>₱182,000</td>
+                    <td>Paid</td>
+                    <td>16th Aug 2024</td>
+                </tr>
+            </table>
+        </div>
+        <div id="content-3" class="table" run-payroll-content>   
+            <h1>Leave</h1>
+        </div>
+        <div id="content-4" class="table" run-payroll-content>   
+            <h1>Review Payroll</h1>
+        </div>
+        <div id="content-5" class="table" run-payroll-content>   
+            <h1>Generate Payroll</h1>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a id="cancel-button" href="#cancel">Cancel</a>
+        <div class="buttons">
+            <button id="button-previous" type="button" class="previous" run-payroll-nav>Previous</button>  
+            <button id="button-next" type="button" class="next active" run-payroll-nav>Next</button>                      
+        </div>
+        <a id="save-as-draft-button" href="payroll.html">Save as draft</a>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2020 MotorPH Payroll</p>
+    </footer>
+</body>
+</html>
