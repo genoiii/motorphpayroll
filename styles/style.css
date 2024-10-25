@@ -8,14 +8,24 @@
 }
 
 :root{
-    --default-color:white;
-    --accent-color: #fd6d45;
-    --base-color:#eef4f4;
-    --text-color:#003049;
-    --input-color: #ffebe6;
-    --danger-color: #fd4545;
-    --success-color: #5bfd45;
-    --warning-color: #fdc345;
+    --default-color: #00000038;     /* Default color for borders and dividers */
+    --white-color:white;            /* White for default backgrounds */
+    --light-color:#eef4f4;          /* Softer light gray with a hint of blue for backgrounds */ 
+    --dark-color:#003049;           /* Deep navy blue for body text to improve readability */
+
+    /* --primary: */
+    /* --secondary: */
+
+    --accent-1-color: #fd6d45;        /* Warm coral for vibrant accents */
+    --accent-1-light-color: #ffebe6; /* Light coral for softer accents */ 
+
+    --accent2: #00bfa6;             /* Fresh teal for cool, standout accents */
+    --accent3: #ffc107;             /* Bright amber yellow for energetic accents */
+
+    --info-color: #17a2b8;               /* Calm blue-green for info elements */
+    --danger-color: #dc3545;             /* Strong red for error and danger alerts */
+    --success-color: #28a745;            /* Standard green for success messages */
+    --warning-color: #ffc107;            /* Amber-yellow for warnings */   
 
     --small-font-size: 0.8rem;
     --medium-font-size: 1.2rem;
@@ -25,24 +35,25 @@
 html{
     font-family: Roboto Bold, Open Sans, Lato, Poppins;
     font-size: 12px;
-    color: var(--text-color);
+    color: var(--dark-color);
     text-align: center;        
 }
 
 body{
     min-block-size: 100vh;
     min-block-size: 100dvh;
-    background-color: var(--base-color);    
+    background-color: var(--light-color);    
 }
 
 button{
     font:inherit;
     color: inherit;    
     border: none;
-    background-color: var(--accent-color);
+    background-color: var(--accent-1-color);
     text-transform: uppercase;
     cursor: pointer;
     transition: 150ms ease;
+    text-wrap: nowrap;
 }
 
 .login-page{
@@ -54,11 +65,11 @@ button{
 
 .wrapper{
     box-sizing: border-box;
-    background-color: var(--base-color);
+    background-color: var(--light-color);
     width: max(40%, 600px);
     padding: 10px;
     /* border-radius: 20px 20px 20px 20px;
-    border: 3px  solid var(--text-color); */
+    border: 3px  solid var(--dark-color); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,17 +104,15 @@ form label{
     flex-shrink: 0;
     height: 50px;
     width: 50px;
-    background-color: var(--accent-color);
-    fill: var(--default-color);
-    font-size: 1.5rem;
+    background-color: var(--accent-1-color);
+    fill: var(--white-color);
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--dark-color);
     border-radius: 10px 0 0 10px;  
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 500;        
+    justify-content: center;     
 }
 
 form input{
@@ -114,25 +123,25 @@ form input{
     padding: 1em;
     font: inherit;    
     border-radius: 0 10px 10px 0;
-    border: 2px solid var(--input-color);
+    border: 2px solid var(--accent-1-light-color);
     border-left: none;
-    background-color: var(--input-color);
+    background-color: var(--accent-1-light-color);
     transition: 150ms ease; 
 }
 
 form input:hover{
-    border-color: var(--accent-color);
+    border-color: var(--accent-1-color);
 
 }
 form input:focus{
     outline: none;
-    border-color: var(--text-color);
+    border-color: var(--dark-color);
 }
 div:has(input:focus) > label{
-    background-color: var(--text-color);
+    background-color: var(--dark-color);
 }
 form input::placeholder{
-    color: var(--text-color);
+    color: var(--dark-color);
 }
 
 form button{
@@ -143,15 +152,15 @@ form button{
     font-size: 1.2rem;
 }
 form button:hover{
-    background-color: var(--text-color);
+    background-color: var(--dark-color);
 }
 form button:focus{
     outline: none;
-    background-color: var(--text-color);
+    background-color: var(--dark-color);
 }
 
 a{
-    color: var(--accent-color);
+    color: var(--accent-1-color);
     text-decoration: none;
 }
 a:hover{
@@ -182,20 +191,20 @@ form div.incorrect input{
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 
-        'Asidebar Aheading'
+        'Asidebar heading'
         'Asidebar Amain-content'
         'Asidebar Afooter';
 }
 
 /* Heading */
 .heading{
-    grid-area: Aheading;
-    background-color: var(--default-color);
+    grid-area: heading;
+    background-color: var(--white-color);
     display: flex;
     align-items: center;
     text-align: left;
     padding: 20px;
-    color: var(--text-color);
+    color: var(--dark-color);
 }
 
 /* Sidebar */
@@ -205,11 +214,11 @@ form div.incorrect input{
     flex-direction: column;
     align-items: center;
     justify-content:space-between;     
-    background-color: var(--text-color);
+    background-color: var(--dark-color);
 }
 
 .sidebar svg{
-    fill: var(--default-color);
+    fill: var(--white-color);
     width: 50px;
     height: 50px;
     /* cursor: pointer;
@@ -222,34 +231,31 @@ form div.incorrect input{
 }
 
 .img-container{
-    background-color: var(--default-color);
+    background-color: var(--white-color);
     padding: 15px;
-    color: var(--base-color);
+    color: var(--light-color);
     display: block;
     font-size: var(--medium-font-size); 
 }
 
 .item{
     padding: 10px;
-    color: var(--base-color);
+    color: var(--light-color);
     display: block;
     font-size: var(--medium-font-size);    
 }
 
 .item:hover{
-    background-color: var(--base-color);
-    color: var(--text-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
 .item.active{
-    background-color: var(--base-color);
-    color: var(--text-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
-
-
 /* Content */
-
 /* Dashboard Content */
 .main-content{
     display: grid;
@@ -263,11 +269,11 @@ form div.incorrect input{
 
 .content-container{  
     padding: 20px;
-    background-color: var(--default-color);
+    background-color: var(--white-color);
 }
 
 .content-container h2{   
-    color: var(--text-color);
+    color: var(--dark-color);
 }
 
 .content-heading {
@@ -276,7 +282,7 @@ form div.incorrect input{
 }
 
 .content-heading svg {
-    color: var(--accent-color);
+    color: var(--accent-1-color);
     width: 30px;
     height: 30px;
     margin-inline-end: 7px;
@@ -298,7 +304,7 @@ form div.incorrect input{
 
 .content {
     
-    fill: var(--accent-color);
+    fill: var(--accent-1-color);
     width: 30px;
     height: 30px;
     margin-inline-end: 7px;
@@ -322,21 +328,21 @@ footer{
         'announcement'
         'filter'
         'table';
-    background: var(--default-color);
+    background: var(--white-color);
 }
 
 
 .payroll-content .announcement{
     grid-area: announcement;
     display: flex;
-    background: var(--base-color);
+    background: var(--light-color);
     padding: 30px;
     padding-left: 50px;
     gap: 20px;
 }
 
 .payroll-content .announcement svg{
-    fill: var(--accent-color);
+    fill: var(--accent-1-color);
     width: 50px;
     height: 50px;
     margin-top: var(--small-font-size);
@@ -359,36 +365,43 @@ footer{
 .payroll-content .announcement .info button{
     border-radius: 10px;
     padding: 0.85em 4em;
-    color: var(--default-color);
+    color: var(--white-color);
     font:inherit;
     font-weight: 600;
     font-size: 1.2rem;
+}
+
+.payroll-content .announcement .info button:hover{
+    background-color: var(--dark-color);
 }
 
 .payroll-content .filter{    
     grid-area: filter;
     display: flex;
     justify-content: space-between;
-    background: var(--default-color);
+    flex-wrap: wrap;
+    background: var(--white-color);
     padding: 20px;
+    gap: 20px;
     padding-inline-start: 200px;
 }
 
 .payroll-content .filter button{    
-    border: 2px solid var(--text-color);
-    background: var(--default-color);
+    border: 2px solid var(--dark-color);
+    background: var(--white-color);
     padding: 10px 20px;
     cursor: pointer;
     transition: 150ms ease;
-}   
+}
 
 .payroll-content .filter .container{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;    
 }
 
 .payroll-content .filter .border{
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--accent-1-color);
     border-radius: 10px;
     padding-inline: 12px;
     display: flex;
@@ -407,13 +420,257 @@ footer{
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    background: var(--default-color);
+    background: var(--white-color);
     padding: 20px;
     text-align: left;
 }
 
 .payroll-content .table button{
-    border: 2px solid var(--text-color);
-    background: var(--default-color);
+    border: 2px solid var(--dark-color);
+    background: var(--white-color);
     padding: .25em 1em;
 }
+
+/* ==== Run Payroll Page ==== */
+.run-payroll-page{
+    display: grid;    
+    grid-template-columns: .25fr 1fr;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas: 
+        'header header'
+        'aside heading'
+        'aside run-payroll'
+        'aside nav'
+        'footer footer'; 
+    background-color: var(--white-color);
+}
+
+.run-payroll-page header{
+    grid-area: header;
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--default-color);        
+}
+
+.run-payroll-page header .title {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+.run-payroll-page header .title svg{
+    color: var(--default-color);
+    width: 2em;
+    height: 2em;    
+    border: 1px solid var(--default-color);
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+.run-payroll-page header .title svg:hover{
+    color: var(--accent-1-color);
+    border: 1px solid var(--accent-1-color);
+}
+
+.pay-period{
+    display: flex;
+    align-items: center;
+    padding-block: 3px;
+    padding-inline-start: 20px;
+    border-inline-start: 1px solid var(--default-color);
+}
+
+.pay-period label{
+    display: flex;
+    text-align: left;
+    color: var(--dark-color);
+    margin-inline-end: 5px;
+}
+
+.pay-period label svg{    
+    width: 1.25em;
+    height: 1.25em;
+    margin-inline-end: 7px;
+}
+
+.run-payroll-page .heading{
+    grid-area: heading;
+    display: flex;
+    justify-content: space-between;
+}
+
+.run-payroll-page .heading h4{
+    color: var(--default-color);
+}
+
+.run-payroll-page .heading svg{
+    color: var(--default-color);
+    width: 2em;
+    height: 2em;
+    margin-inline: .75em;
+    margin-top: .5em;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+.run-payroll-page .heading .search-bar{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--default-color);
+}
+
+.run-payroll-page .heading .search-bar input{
+    border: none;
+}
+
+.run-payroll-page .heading .search-bar input::placeholder{
+    color: var(--default-color);
+    font-weight:bold
+}
+
+.run-payroll-page .heading .search-bar input:focus{
+    outline: none;
+}
+
+div:has(input:focus) > .search-bar label{
+    background-color: var(--white-color);
+}
+
+.run-payroll-page .heading .search-bar label::after{
+    color: var(--default-color);
+}
+
+[run-payroll-heading] {
+    display: none;
+}
+.active[run-payroll-heading]{
+    display: block;
+}
+
+.run-payroll-page aside{
+    grid-area: aside;
+    border-inline: 1px solid var(--default-color);
+    padding: 2em;
+}
+
+.run-payroll-page .aside svg{
+    fill: var(--default-color);
+    width: 3em;
+    height: 3em;
+}
+
+.run-payroll-page .aside .highlight {
+    font-weight: bold;
+}
+
+.run-payroll-page .aside .highlight svg{
+    fill: var(--accent-1-color);
+    filter: drop-shadow(0 0 10px var(--accent-1-color));
+}
+
+.run-payroll-page .stages{
+    display: flex;
+    gap: .75em;    
+}
+
+.run-payroll-page .stages p{
+    padding-block: .75em;
+    text-wrap: nowrap;
+}
+
+.stages-description{
+    margin-left: 1.25em;
+    min-height: 1.5em;
+    height: fit-content;
+    text-wrap: wrap;
+    text-align: left;
+    padding-inline-start: 1.75em;
+    border-inline-start: .25em dotted var(--default-color);
+}
+
+#stage-5{
+    border: none;
+}
+
+[run-payroll-stage-description] p{
+    display: none;
+}
+.active[run-payroll-stage-description] p{
+    display: block;        
+}
+
+.active[run-payroll-stage-description] {
+    border-inline-start: .25em dotted var(--accent-1-color);
+    height: 3em;
+}
+
+.run-payroll{
+    display: grid;
+    grid-area: run-payroll;
+}
+
+.run-payroll-page table{
+    height: 100%; 
+    width: 100%;   
+    border-block: 1px solid var(--default-color);
+}
+
+[run-payroll-content] {
+    display: none;
+}
+.active[run-payroll-content]{
+    display: block;
+}
+
+.run-payroll-page .nav{
+    grid-area: nav;
+    padding: 2em;
+    display: flex;
+    justify-content:space-between
+}
+
+.run-payroll-page .nav a{
+    color: var(--dark-color);
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+}
+
+.run-payroll-page .nav button{
+    border: 2px solid var(--dark-color);
+    background: var(--white-color);
+    padding: 10px 20px;
+    margin-inline: 10px;    
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+.run-payroll-page .nav .buttons{
+    display: flex;       
+}
+
+.run-payroll-page .nav .buttons .next{
+    border: none;
+    background-color: var(--accent-1-color);
+    color: var(--white-color);
+}
+
+.run-payroll-page .nav .buttons button:hover{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+[run-payroll-nav] {
+    display: none;
+}
+.active[run-payroll-nav]{
+    display: flex;
+}
+
+.run-payroll-page footer{
+    grid-area: footer;
+    border: 1px solid var(--default-color);
+}
+
