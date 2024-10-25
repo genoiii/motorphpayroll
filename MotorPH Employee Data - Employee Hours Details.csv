@@ -1,0 +1,35 @@
+Employee #,Last Name,First Name,Total Hours,Overtime,Status,Position
+10001,Garcia,Manuel III,80,0,Regular,Chief Executive Officer
+10002,Lim,Antonio,78,0,Regular,Chief Operating Officer
+10003,Aquino,Bianca Sofia,80,0,Regular,Chief Finance Officer
+10004,Reyes,Isabella,79,0,Regular,Chief Marketing Officer
+10005,Hernandez,Eduard,77,0,Regular,IT Operations and Systems
+10006,Villanueva,Andrea Mae,80,0,Regular,HR Manager
+10007,San Jose,Brad ,80,0,Regular,HR Team Leader
+10008,Romualdez,Alice,80,1,Regular,HR Rank and File
+10009,Atienza,Rosie ,80,0,Regular,HR Rank and File
+10010,Alvaro,Roderick,76,2,Regular,Accounting Head
+10011,Salcedo,Anthony,80,0,Regular,Payroll Manager
+10012,Lopez,Josie ,80,0,Regular,Payroll Team Leader
+10013,Farala,Martha,80,0,Regular,Payroll Rank and File
+10014,Martinez,Leila,80,0,Regular,Payroll Rank and File
+10015,Romualdez,Fredrick ,80,0,Regular,Account Manager
+10016,Mata,Christian,80,0,Regular,Account Team Leader
+10017,De Leon,Selena ,77,1,Regular,Account Team Leader
+10018,San Jose,Allison ,80,0,Regular,Account Rank and File
+10019,Rosario,Cydney ,80,0,Regular,Account Rank and File
+10020,Bautista,Mark ,78,0,Regular,Account Rank and File
+10021,Lazaro,Darlene ,80,0,Probationary,Account Rank and File
+10022,Delos Santos,Kolby ,79,0,Probationary,Account Rank and File
+10023,Santos,Vella ,75,2,Probationary,Account Rank and File
+10024,Del Rosario,Tomas,80,0,Probationary,Account Rank and File
+10025,Tolentino,Jacklyn ,80,0,Probationary,Account Rank and File
+10026,Gutierrez,Percival ,80,0,Probationary,Account Rank and File
+10027,Manalaysay,Garfield ,80,1,Probationary,Account Rank and File
+10028,Villegas,Lizeth ,80,1,Probationary,Account Rank and File
+10029,Ramos,Carol ,80,0,Probationary,Account Rank and File
+10030,Maceda,Emelia ,80,0,Probationary,Account Rank and File
+10031,Aguilar,Delia ,80,0,Probationary,Account Rank and File
+10032,Castro,John Rafael,77,0,Regular,Sales & Marketing
+10033,Martinez,Carlos Ian,80,0,Regular,Supply Chain and Logistics
+10034,Santos,Beatriz,80,0,Regular,Customer Service and Relations
