@@ -1,7 +1,7 @@
 const form = document.getElementById('form')
 const username_input = document.getElementById('username-input')
 const password_input = document.getElementById('password-input')
-const error_message = document.getElementById('error-message');
+const error_message = document.getElementById('error-message')
 
 form.addEventListener('submit', (e) => {
   let errors = []  
@@ -18,10 +18,6 @@ form.addEventListener('submit', (e) => {
     if (username_input.value === 'admin' && password_input.value === 'password') {
       // Redirect to another page on successful login
       window.location.href = 'dashboard.html'; // Change 'success.html' to your target page
-    } else {
-      errors.push('Invallid username or password')
-      password_input.parentElement.classList.add('incorrect')
-      username_input.parentElement.classList.add('incorrect')
     }
   }
 })
@@ -44,6 +40,13 @@ function getLoginFormErrors(username, password){
     errors.push('Password is required')
     password_input.parentElement.classList.add('incorrect')    
   }
+
+  if (username_input.value !== 'admin' || password_input.value !== 'password') {
+    errors.push('Invallid username or password')
+    password_input.parentElement.classList.add('incorrect')
+    username_input.parentElement.classList.add('incorrect')
+  }
+
 
   return errors;
 }
