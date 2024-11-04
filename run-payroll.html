@@ -6,6 +6,10 @@
     <title>Run-Payroll | Admin Portal</title>
     <link rel="stylesheet" href="styles/style.css">
     <script type="text/javascript" src="scripts/sample.js" defer></script>
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script> -->
 </head>
 
 <body class="run-payroll-page">
@@ -233,108 +237,785 @@
     <!-- Content -->
     <!-- Table -->
     <div class="run-payroll">
-        <div id="content-1" class="table active" run-payroll-content>
-            <table>
-                <tr>
-                    <th>Pay Runs</th>
-                    <th>Pay Date</th>
-                    <th>Employees</th>
-                    <th>Total Payment</th>
-                    <th>Status</th>
-                    <th>Approved Date</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Aug 26th - Sept 8th</td>
-                    <td>13th Sept 2024</td>
-                    <td>22</td>
-                    <td>₱123,000</td>
-                    <td>Late</td>
-                    <td>N/A</td>
-                    <td><button type="button">Run Late Payroll</button></td>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Sept 9th - Sept 22th</td>
-                    <td>27th Sept 2024</td>
-                    <td>22</td>
-                    <td>₱23,000</td>
-                    <td>Draft</td>
-                    <td>N/A</td>
-                    <td><button type="button">Setup</button></td>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Aug 12th - Aug 25th</td>
-                    <td>30th Aug 2024</td>
-                    <td>22</td>
-                    <td>₱225,000</td>
-                    <td>Paid</td>
-                    <td>29th Aug 2024</td>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Jul 29th - Aug 11th</td>
-                    <td>16th Aug 2024</td>
-                    <td>22</td>
-                    <td>₱182,000</td>
-                    <td>Paid</td>
-                    <td>16th Aug 2024</td>
-                </tr>
+        <div id="content-1" class="table-wrapper active" run-payroll-content>
+            <table class="table">
+                <thead>                                                
+                    <tr>
+                        <th class="fit"><input type="checkbox"></th>                        
+                        <th class="">Name</th>
+                        <th class="">Total Hours</th>
+                        <th class="">Overtime</th>
+                        <th class="">Status</th>
+                        <th class="">Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class="checkbox"><input type="checkbox"></td>
+                        <td>                                                     
+                            <h4>Manuel III	Garcia</h4>
+                        </td>
+                        <td>80 hrs</td>
+                        <td>-</td>
+                        <td>
+                            <p class="status">                                
+                                <span class="badge late-status">
+                                    <span class="dot danger"></span>
+                                    Denied
+                                </span>
+                            </p>                         
+                        </td>
+                        <td>Regular</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox"></td>
+                        <td><h4>Antonio	Lim</h4></td>
+                        <td>79 hrs</td>
+                        <td>3 hrs</td>
+                        <td>
+                            <p class="status">                                
+                                <span class="badge late-status">
+                                    <span class="dot danger"></span>
+                                    Pending
+                                </span>
+                            </p>                         
+                        </td>
+                        <td>Regular</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox"></td>
+                        <td><h4>Bianca Sofia Aquino</h4></td>
+                        <td>80 hrs</td>
+                        <td>-</td>
+                        <td>
+                            <p class="status">                                
+                                <span class="badge late-status">
+                                    <span class="dot danger"></span>
+                                    Approved
+                                </span>
+                            </p>                         
+                        </td>
+                        <td>Regular</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox"></td>
+                        <td><h4>Isabella Reyes</h4></td>
+                        <td>77 hrs</td>
+                        <td>10 hrs</td>
+                        <td>
+                            <p class="status">                                
+                                <span class="badge late-status">
+                                    <span class="dot danger"></span>
+                                    Approved
+                                </span>
+                            </p>                         
+                        </td>
+                        <td>Regular</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox"></td>
+                        <td><h4>Eduard Hernandez</h4></td>
+                        <td>80 hrs</td>
+                        <td>-</td>
+                        <td>
+                            <p class="status">                                
+                                <span class="badge late-status">
+                                    <span class="dot danger"></span>
+                                    Denied
+                                </span>
+                            </p>                         
+                        </td>
+                        <td>Regular</td>
+                    </tr>
+                </tbody>                    
+            </table>            
+        </div>
+        <div id="content-2" class="table-wrapper" run-payroll-content>   
+            <table class="table">
+                <thead>                                                
+                    <tr>                
+                        <th class="">Employees</th>
+                        <th class="">Hours Worked</th>
+                        <th class="">Additional Earnings</th>
+                        <th class="">Gross Pay</th>
+                        <th class="">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td>                                                     
+                            <h4>Manuel III	Garcia</h4>
+                        </td>
+                        <td>
+                            <div>                                
+                                <p> 
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                            <path 
+                                                d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                            <path 
+                                                d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/></g>
+                                        </svg>
+                                    </span>
+                                    80 hrs 
+                                    <span class="color-default">Total Hours</span>
+                                </p>                                
+                            </div>
+                            <div>
+                                <p>
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24"
+                                            class="time-add">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                                <path d="M20.984 12.535a9 9 0 1 0-8.468 8.45M16 19h6m-3-3v6"/>
+                                                <path d="M12 7v5l3 3"/>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    Add Overtime
+                                </p>
+                            </div>
+                        </td>
+                        <td>                            
+                            <p>
+                                <span>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="1em" 
+                                        height="1em" 
+                                        viewBox="0 0 32 32">
+                                        <path 
+                                            fill="currentColor" 
+                                            d="M16 2A14.173 14.173 0 0 0 2 16a14.173 14.173 0 0 0 14 14a14.173 14.173 0 0 0 14-14A14.173 14.173 0 0 0 16 2m8 15h-7v7h-2v-7H8v-2h7V8h2v7h7Z"/>
+                                        <path 
+                                            fill="none" 
+                                            d="M24 17h-7v7h-2v-7H8v-2h7V8h2v7h7z"/>
+                                    </svg>
+                                </span>
+                                Reimbursement
+                            </p>
+                        </td>
+                        <td>₱ 42,857.14</td>
+                        <td>
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 24 24">
+                                <path 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-linecap="round" 
+                                    troke-width="2" 
+                                    d="M12 6v12m6-6H6"/>
+                            </svg>
+                            <a>Add Note</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Antonio	Lim</h4></td>
+                        <td>
+                            <div>
+                                <p>
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                            <path 
+                                                d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                            <path 
+                                                d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/></g>
+                                        </svg>
+                                    </span>
+                                    79 hrs 
+                                    <span class="color-default">Total Hours</span>
+                                </p>
+                            </div>
+                                <p>
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                            <path 
+                                                d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                            <path 
+                                                d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/></g>
+                                        </svg>
+                                    </span>
+                                    3 hrs 
+                                    <span class="color-default">Overtime</span>
+                                </p>
+                            <div>
+
+                            </div>
+                        </td>
+                        <td>                            
+                            <p>
+                                <span>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="1em" 
+                                        height="1em" 
+                                        viewBox="0 0 32 32">
+                                        <path 
+                                            fill="currentColor" 
+                                            d="M16 2A14.173 14.173 0 0 0 2 16a14.173 14.173 0 0 0 14 14a14.173 14.173 0 0 0 14-14A14.173 14.173 0 0 0 16 2m8 15h-7v7h-2v-7H8v-2h7V8h2v7h7Z"/>
+                                        <path 
+                                            fill="none" 
+                                            d="M24 17h-7v7h-2v-7H8v-2h7V8h2v7h7z"/>
+                                    </svg>
+                                </span>
+                                Reimbursement
+                            </p>
+                        </td>
+                        <td>₱ 29,285.71</td>
+                        <td>
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 24 24">
+                                <path 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-linecap="round" 
+                                    troke-width="2" 
+                                    d="M12 6v12m6-6H6"/>
+                            </svg>
+                            <a>Add Note</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Bianca Sofia Aquino</h4></td>
+                        <td>
+                            <div>                                
+                                <p> 
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                            <path 
+                                                d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                            <path 
+                                                d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    80 hrs <span class="color-default">Total Hours</span>
+                                </p>                                
+                            </div>
+                            <div>
+                                <p>
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24"
+                                            class="time-add">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                                <path d="M20.984 12.535a9 9 0 1 0-8.468 8.45M16 19h6m-3-3v6"/>
+                                                <path d="M12 7v5l3 3"/>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    Add Overtime
+                                </p>
+                            </div>
+                        </td>
+                        <td>                            
+                            <p>
+                                <span>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="1em" 
+                                        height="1em" 
+                                        viewBox="0 0 32 32">
+                                        <path 
+                                            fill="currentColor" 
+                                            d="M16 2A14.173 14.173 0 0 0 2 16a14.173 14.173 0 0 0 14 14a14.173 14.173 0 0 0 14-14A14.173 14.173 0 0 0 16 2m8 15h-7v7h-2v-7H8v-2h7V8h2v7h7Z"/>
+                                        <path 
+                                            fill="none" 
+                                            d="M24 17h-7v7h-2v-7H8v-2h7V8h2v7h7z"/>
+                                    </svg>
+                                </span>
+                                Reimbursement
+                            </p>
+                        </td>
+                        <td>₱ 28,571.43</td>
+                        <td>
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 24 24">
+                                <path 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-linecap="round" 
+                                    troke-width="2" 
+                                    d="M12 6v12m6-6H6"/>
+                            </svg>
+                            <a>Add Note</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Isabella Reyes</h4></td>
+                        <td>
+                            <div>
+                                <p>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="1em" 
+                                        height="1em" 
+                                        viewBox="0 0 24 24">
+                                        <g 
+                                            fill="none" 
+                                            stroke="currentColor" 
+                                            stroke-linecap="round" 
+                                            stroke-linejoin="round" 
+                                            stroke-width="2">
+                                        <path 
+                                            d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                        <path 
+                                            d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/>
+                                        </g>
+                                    </svg>
+                                    77 hrs <span class="color-default">Total Hours</span>
+                                </p>                                
+                            </div>
+                            <div>
+                                <p>
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                            <path 
+                                                d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                            <path 
+                                                d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/></g>
+                                        </svg>
+                                    </span>
+                                    10 hrs
+                                    <span class="color-default">Overtime</span>                                    
+                                </p>
+                            </div>
+                        </td>
+                        <td>                            
+                            <p>
+                                <span>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="1em" 
+                                        height="1em" 
+                                        viewBox="0 0 32 32">
+                                        <path 
+                                            fill="currentColor" 
+                                            d="M16 2A14.173 14.173 0 0 0 2 16a14.173 14.173 0 0 0 14 14a14.173 14.173 0 0 0 14-14A14.173 14.173 0 0 0 16 2m8 15h-7v7h-2v-7H8v-2h7V8h2v7h7Z"/>
+                                        <path 
+                                            fill="none" 
+                                            d="M24 17h-7v7h-2v-7H8v-2h7V8h2v7h7z"/>
+                                    </svg>
+                                </span>
+                                Reimbursement
+                            </p>
+                        </td>
+                        <td>₱ 31,071.43</td>
+                        <td>
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 24 24">
+                                <path 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-linecap="round" 
+                                    troke-width="2" 
+                                    d="M12 6v12m6-6H6"/>
+                            </svg>
+                            <a>Add Note</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Eduard Hernandez</h4></td>
+                        <td>
+                            <div>                                
+                                <p> 
+                                    <span>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="1em" 
+                                            height="1em" 
+                                            viewBox="0 0 24 24">
+                                            <g 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                stroke-linecap="round" 
+                                                stroke-linejoin="round" 
+                                                stroke-width="2">
+                                            <path 
+                                                d="M21 12a9 9 0 1 0-9.972 8.948q.48.051.972.052"/>
+                                            <path 
+                                                d="M12 7v5l2 2m4.42 1.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3z"/></g>
+                                        </svg>
+                                    </span>
+                                    80 hrs <span class="color-default">Total Hours</span>
+                                </p>                                
+                            </div>
+                            <div>
+                                <p>
+                                    <span>
+                                        <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    width="1em" 
+                                    height="1em" 
+                                    viewBox="0 0 24 24"
+                                    class="time-add">
+                                    <g 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round" 
+                                        stroke-width="2">
+                                        <path d="M20.984 12.535a9 9 0 1 0-8.468 8.45M16 19h6m-3-3v6"/>
+                                        <path d="M12 7v5l3 3"/>
+                                    </g>
+                                </svg>
+                                    </span>
+                                    Add Overtime
+                                </p>
+                            </div>
+                        </td>
+                        <td>                            
+                            <p>
+                                <span>
+                                    <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 32 32">
+                                <path 
+                                    fill="currentColor" 
+                                    d="M16 2A14.173 14.173 0 0 0 2 16a14.173 14.173 0 0 0 14 14a14.173 14.173 0 0 0 14-14A14.173 14.173 0 0 0 16 2m8 15h-7v7h-2v-7H8v-2h7V8h2v7h7Z"/>
+                                <path 
+                                    fill="none" 
+                                    d="M24 17h-7v7h-2v-7H8v-2h7V8h2v7h7z"/>
+                            </svg>
+                                </span>
+                                Reimbursement
+                            </p>
+                        </td>
+                        <td>₱ 25,080.95</td>
+                        <td>
+                            <svg 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 24 24">
+                                <path 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-linecap="round" 
+                                    troke-width="2" 
+                                    d="M12 6v12m6-6H6"/>
+                            </svg>
+                            <a>Add Note</a>
+                        </td>
+                    </tr>
+                </tbody>                    
             </table>
         </div>
-        <div id="content-2" class="table" run-payroll-content>   
-            <table>
-                <tr>
-                    <th>Pay Runs</th>
-                    <th>Pay Date</th>
-                    <th>Employees</th>
-                    <th>Total Payment</th>
-                    <th>Status</th>
-                    <th>Approved Date</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Aug 26th - Sept 8th</td>
-                    <td>13th Sept 2024</td>
-                    <td>22</td>
-                    <td>₱123,000</td>
-                    <td>Late</td>
-                    <td>N/A</td>
-                    <td><button type="button">Run Late Payroll</button></td>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Sept 9th - Sept 22th</td>
-                    <td>27th Sept 2024</td>
-                    <td>22</td>
-                    <td>₱23,000</td>
-                    <td>Draft</td>
-                    <td>N/A</td>
-                    <td><button type="button">Setup</button></td>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Aug 12th - Aug 25th</td>
-                    <td>30th Aug 2024</td>
-                    <td>22</td>
-                    <td>₱225,000</td>
-                    <td>Paid</td>
-                    <td>29th Aug 2024</td>
-                </tr>
-                <tr>
-                    <td>Bimonthly Salary: Jul 29th - Aug 11th</td>
-                    <td>16th Aug 2024</td>
-                    <td>22</td>
-                    <td>₱182,000</td>
-                    <td>Paid</td>
-                    <td>16th Aug 2024</td>
-                </tr>
+        <div id="content-3" class="table-wrapper" run-payroll-content>   
+            <table class="table">
+                <thead>                                                
+                    <tr>                    
+                        <th class="">Employees</th>
+                        <th class="">Paid Time Off</th>
+                        <th class="">Paid Holiday</th>
+                        <th class="">Sick Leave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td>                                                     
+                            <h4>Manuel III	Garcia</h4>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Antonio	Lim</h4></td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Bianca Sofia Aquino</h4></td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Isabella Reyes</h4></td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h4>Eduard Hernandez</h4></td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div>                                
+                                <input disabled type="number" name="paid-time-off" id="pai-time-off" placeholder="0" >
+                                <label for="pai-time-off">hrs</label>
+                                <p>3 hrs Remaining</p>
+                            </div>                        
+                        </td>
+                    </tr>
+                </tbody>                    
             </table>
         </div>
-        <div id="content-3" class="table" run-payroll-content>   
-            <h1>Leave</h1>
+        <div id="content-4" class="" run-payroll-content>
+            <div class="stage-4-wrapper">
+                <div class="row-1">
+                    <p class="font-size-20px">Total Net Wages</p>
+                    <p class="font-size-36px">₱ 456,123</p>
+                    <p>22 employee will be paid at October 11</p>
+                </div>
+                <div class="table-wrapper row-2-col-1">
+                    <table class="table-custom">
+                        <caption>Payment Detail</caption>
+                        <tr>
+                            <td>Total Net Wages</td>
+                            <td>₱ 456,123</td>
+                        </tr>
+                        <tr>
+                            <td>Total Company Taxes</td>
+                            <td>₱ 46,123</td>
+                        </tr>
+                        <tr>
+                            <td>Total Reimbursements</td>
+                            <td>₱ 12,456</td>
+                        </tr>
+                        <tr>
+                            <td>Total Goverment Contribution</td>
+                            <td>₱ 96,352</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>                    
+                        <tfoot>
+                            <tr>
+                                <td>Total Net Wages</td>
+                                <td>₱ 369,852</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="row-2-col-2">
+                    <img src="images\stage-4.png" alt="stage-4">
+                    <p>Payroll Summary</p>
+                    <a href="#View-Payroll-Summary">View Payroll Summary</a>
+                </div> 
+            </div>   
+                       
         </div>
-        <div id="content-4" class="table" run-payroll-content>   
-            <h1>Review Payroll</h1>
-        </div>
-        <div id="content-5" class="table" run-payroll-content>   
-            <h1>Generate Payroll</h1>
+        <div id="content-5" class="table-wrapper" run-payroll-content>   
+            <div class="stage-5-wrapper">
+                <div class="row-1 col-1">
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg"width="512" height="512"
+                         viewBox="0 0 682.667 682.667" class=""><g>
+                        <defs>
+                            <path d="M0 512h512V0H0Z" fill="#000000" opacity="1" data-original="#000000"></path>
+                        </defs>
+                        <g 
+                            clip-path="url(#a)" 
+                            transform="matrix(1.33333 0 0 -1.33333 0 682.667)">
+                            <path d="M0 0v-8c0-22.091-17.909-40-40-40v0c-22.091 0-40 17.909-40 40v283.253" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(90 58)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path>
+                            <path d="M0 0h-332" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(382 10)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h177" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(90 58)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h146v-204" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(236 502)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0v168.747h146" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(10 333.253)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0v0" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(196 502)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h-168c-17.673 0-32 14.327-32 32v224c0 17.673 14.327 32 32 32H0c17.673 0 32-14.327 32-32V32C32 14.327 17.673 0 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(470 10)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M458 198H313.958v56H458Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(313.958 162)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(376.458 162)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(438.958 162)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(313.958 125.333)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(376.458 125.333)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(438.958 125.333)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(313.958 88.667)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(376.458 88.667)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(438.958 88.667)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(313.958 52)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(376.458 52)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h19.042" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(438.958 52)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M112 400H64v48h48zM112 304H64v48h48zM112 208H64v48h48zM112 112H64v48h48z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h122.5" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(178.5 424)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h122.5" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(178.5 328)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h88.5" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(178.5 232)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><path d="M0 0h88.5" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(178.5 136)" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path>
+                        </g>
+                        </g>
+                    </svg>
+                    <p class="font-size-36px">₱ 369,852</p>
+                    <p>Payroll Draft Date</p>
+                </div>
+                <div class="row-1 col-2">
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="512" 
+                        height="512" 
+                        viewBox="0 0 512 512" 
+                        class="">
+                        <g>
+                            <path d="M498.791 161.127c-17.545-17.546-46.094-17.545-63.645.004l-45.128 45.166V87.426c0-12.02-4.681-23.32-13.181-31.819L334.412 13.18C325.913 4.68 314.612 0 302.592 0H45.018c-24.813 0-45 20.187-45 45v422c0 24.813 20.187 45 45 45h300c24.813 0 45-20.187 45-45V333.631L498.79 224.767c17.587-17.586 17.591-46.052.001-63.64zM300.019 30c2.834 0 8.295-.491 13.18 4.393l42.426 42.427c4.76 4.761 4.394 9.978 4.394 13.18h-60V30zm59.999 437c0 8.271-6.728 15-15 15h-300c-8.271 0-15-6.729-15-15V45c0-8.271 6.729-15 15-15h225v75c0 8.284 6.716 15 15 15h75v116.323l-44.256 44.293-21.203 21.204a15 15 0 0 0-3.624 5.863l-21.214 63.64a14.999 14.999 0 0 0 18.974 18.974l63.64-21.213a14.988 14.988 0 0 0 5.863-3.624l1.82-1.82V467zm-33.64-154.573 21.213 21.213-8.103 8.103-31.819 10.606 10.606-31.82 8.103-8.102zm42.422-.005-21.213-21.213 72.105-72.166 21.213 21.213-72.105 72.166zm108.773-108.864-15.463 15.476-21.213-21.213 15.468-15.481c5.852-5.849 15.366-5.848 21.214 0 5.847 5.85 5.878 15.333-.006 21.218z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M285.018 150h-210c-8.284 0-15 6.716-15 15s6.716 15 15 15h210c8.284 0 15-6.716 15-15s-6.716-15-15-15zM225.018 210h-150c-8.284 0-15 6.716-15 15s6.716 15 15 15h150c8.284 0 15-6.716 15-15s-6.716-15-15-15zM225.018 270h-150c-8.284 0-15 6.716-15 15s6.716 15 15 15h150c8.284 0 15-6.716 15-15s-6.716-15-15-15zM225.018 330h-150c-8.284 0-15 6.716-15 15s6.716 15 15 15h150c8.284 0 15-6.716 15-15s-6.716-15-15-15zM285.018 422h-90c-8.284 0-15 6.716-15 15s6.716 15 15 15h90c8.284 0 15-6.716 15-15s-6.716-15-15-15z" fill="#000000" opacity="1" data-original="#000000" class=""></path>
+                        </g>
+                    </svg>
+                    <p class="font-size-36px">₱ 369,852</p>
+                    <p>Total Payroll</p>
+                </div>
+                <div class="row-1 col-3">
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="512" 
+                        height="512" 
+                        viewBox="0 0 64 64"                         
+                        class="">
+                        <g>
+                            <path d="M51 35c-3.976 0-8 1.374-8 4v5.268c-4.4-2.391-14-1.34-14 2.732v10c0 2.626 4.024 4 8 4s8-1.374 8-4v-.285c1.728.95 4.035 1.285 6 1.285 3.976 0 8-1.374 8-4V39c0-2.626-4.024-4-8-4zm6 14c0 1.433-6.53 3.015-10.661 1.157C45.414 49.74 45 49.275 45 49c-.016-2.075.032-1.803-.029-2.3 1.733.964 4.062 1.3 6.029 1.3 2.222 0 4.459-.43 6-1.268zm-26 .732c3.108 1.688 8.891 1.689 12 0V52c0 .705-2.278 2-6 2s-6-1.295-6-2zM57 44c0 1.406-6.377 3.008-10.572 1.195h-.001C45.441 44.769 45 44.288 45 44v-2.268c3.108 1.688 8.891 1.689 12 0zm-6-7c3.722 0 6 1.295 6 2s-2.278 2-6 2-6-1.295-6-2 2.278-2 6-2zm-14 8c3.722 0 6 1.295 6 2s-2.278 2-6 2-6-1.295-6-2 2.278-2 6-2zm0 14c-3.722 0-6-1.295-6-2v-2.268c3.108 1.688 8.891 1.689 12 0V57c0 .705-2.278 2-6 2zm9.444-3.798C45.452 54.777 45 54.281 45 54v-2.289c3.19 1.761 8.965 1.67 12 .022V54c0 1.409-6.37 2.996-10.556 1.202z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M26 49H12c-1.654 0-3-1.346-3-3V17h38v15a1 1 0 0 0 2 0V16.816A2.996 2.996 0 0 0 51 14v-4c0-1.654-1.346-3-3-3h-6V6c0-3.97-6-3.966-6 0v1H20V6c0-3.97-6-3.966-6 0v1H8c-1.654 0-3 1.346-3 3v4c0 1.302.839 2.402 2 2.816V46c0 2.757 2.243 5 5 5h14c1.322 0 1.324-2 0-2zM38 6c0-1.324 2-1.322 2 0v5c0 1.324-2 1.322-2 0zM16 6c0-1.324 2-1.322 2 0v5c0 1.324-2 1.322-2 0zm-9 4c0-.551.449-1 1-1h6v2c0 3.97 6 3.966 6 0V9h16v2c0 3.97 6 3.966 6 0V9h6c.551 0 1 .449 1 1v4c0 .551-.449 1-1 1H8c-.551 0-1-.449-1-1z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M26 44v-4h4v1c0 1.322 2 1.324 2 0v-1h4c0 1.322 2 1.324 2 0h2a1 1 0 0 0 0-2h-2v-4h4c0 1.322 2 1.324 2 0V21a1 1 0 0 0-1-1H13a1 1 0 0 0-1 1v24a1 1 0 0 0 1 1h13c1.322 0 1.324-2 0-2zm-2 0h-4v-4h4zm8-16h4v4h-4zm-2 4h-4v-4h4zm2-6v-4h4v4zm-2 0h-4v-4h4zm-6 0h-4v-4h4zm0 2v4h-4v-4zm-6 4h-4v-4h4zm-4 2h4v4h-4zm6 0h4v4h-4zm6 4v-4h4v4zm10 0h-4v-4h4zm2-6v-4h4v4zm4-6h-4v-4h4zm-28-4h4v4h-4zm0 18h4v4h-4z" fill="#000000" opacity="1" data-original="#000000" class=""></path>
+                        </g>
+                    </svg>
+                    <p class="font-size-36px">₱ 369,852</p>
+                    <p>Payroll Payment Date</p>
+                </div>
+                <div class="row-2">
+                    sample
+                </div>
+           </div>
         </div>
     </div>
 
