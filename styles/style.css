@@ -8,7 +8,9 @@
 }
 
 :root{
-    --default-color: #00000038;         /* Default color for borders and dividers */
+    --default-color: #00000020;         /* Default color for borders and dividers */
+    --dark-default-color: #00000080;     /* Darker default color for borders and dividers */
+    --light-default-color: #00000010;   /* Lighter default color for borders and dividers */
     --white-color:white;                /* White for default backgrounds */
     --light-color:#eef4f4;              /* Softer light gray with a hint of blue for backgrounds */ 
     --dark-color:#003049;               /* Deep navy blue for body text to improve readability */
@@ -35,6 +37,14 @@
     --small-font-size: 0.8rem;
     --medium-font-size: 1.2rem;
     --large-font-size: 1.6rem;
+}
+
+.color-default{
+    color: var(--default-color);
+}
+
+.color-dark-default{
+    color: var(--dark-default-color);
 }
 
 html{
@@ -128,6 +138,52 @@ button{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.table .dot {
+    height: .5em;
+    width: .5em;
+    background-color: #999999;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 4px;
+    vertical-align: middle;
+}
+
+.table .dot.info{
+    background-color: var(--info-color);
+}
+
+.table .dot.danger{
+    background-color: var(--danger-color);
+}
+
+.table .dot.success{
+    background-color: var(--success-color);
+}
+
+.table .dot.pink{
+    background-color: #ff69b4;
+}
+
+.table .dot.orange{
+    background-color: #ff8c00;
+}
+
+.table .dot.green{
+    background-color: #008000;
+}
+
+.table .dot.blue{
+    background-color: #0000ff;
+}
+
+.table .dot.purple{
+    background-color: #800080;
+}
+
+.table .dot.yellow{
+    background-color: #eeee14;
 }
 
 h1{
@@ -902,10 +958,6 @@ div:has(input:focus) > .search-bar label{
     color: var(--accent-1-color);
 }
 
-.color-default{
-    color: var(--default-color);
-}
-
 .run-payroll .table tbody a{
     color: var(--dark-color);
     text-decoration-line: underline;
@@ -929,7 +981,37 @@ div:has(input:focus) > .search-bar label{
     margin: 0;
 }
 
+.run-payroll .table .attendance td:nth-child(2) div {
+    padding: .75em;
+} 
 
+.run-payroll #content-3 .table tbody input{
+    width: 5em;
+    height: 1.75em;
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    border: 1px solid var(--default-color);
+    padding-inline-start: .5em;  
+}
+
+.run-payroll .table tbody input::placeholder{
+    color: var(--default-color);
+}
+
+.run-payroll .table tbody label{
+    margin: 0;
+    height: 1.95em;
+    border-block: 1px solid var(--default-color);
+    border-right: 1px solid var(--default-color);
+    padding-inline: 1em;
+    background-color: var(--light-default-color);
+    color: var(--default-color);
+}
+
+.run-payroll .table tbody .leave-stage{
+    display: flex;
+    flex-wrap: nowrap;   
+}
 
 /* .run-payroll .table tbody td:nth-child(5) {
     vertical-align: middle;
@@ -1055,10 +1137,11 @@ div:has(input:focus) > .search-bar label{
         padding-inline: 2em;
     }
 }
+/* ==== End Run Payroll Page Stage 4 ==== */
 
+/* ==== Run Payroll Page Stage 5 ==== */
 .run-payroll-page .run-payroll .stage-5-wrapper{
     display: grid;
-    border-block: 1px solid var(--default-color);
     grid-template-columns: auto auto auto;
     grid-template-rows: auto 1fr;
     grid-template-areas: 
@@ -1101,8 +1184,115 @@ div:has(input:focus) > .search-bar label{
 .run-payroll-page .run-payroll .stage-5-wrapper .row-2{
     grid-area: row-2;
     border: 1px solid var(--default-color);
-    padding: 1.5em;
+    padding: 2em;
     width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        'row-1-col-1 row-1-col-2 row-1-col-3'
+        'row-2-col-1 row-2-col-2 row-2-col-3';
+    gap: 1em;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-1-col-1{
+    grid-area: row-1-col-1;
+    font-size: 1.5em;
+    font-weight:600;
+    text-align: left;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-1-col-3{
+    grid-area: row-1-col-3;
+    text-align: right;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-1-col-3 button{
+    border: 2px solid var(--dark-color);
+    background: var(--white-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-1-col-3 button:hover{
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-1{
+    grid-area: row-2-col-1;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-1 svg{
+    width: 18.75em;
+    height: 18.75em;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-2{
+    grid-area: row-2-col-2;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-2 .table{
+    border: none
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-2 .table tr{
+    border: none;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-2 .table tr .percentage{
+    margin-left: 1em;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-2 .table tr:nth-child(odd){
+    border-bottom: 1px solid var(--default-color);
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-2 .table tr:nth-child(2){
+    border-bottom: 1px solid var(--default-color);
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-3{
+    grid-area: row-2-col-3;
+}
+
+.run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-2-col-3 svg{
+    width: 18.75em;
+    height: 18.75em;
+}
+
+@media screen and (max-width: 700px) {
+    .run-payroll-page .run-payroll .stage-5-wrapper{
+        display: grid;
+        border-block: 1px solid var(--default-color);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+            'row-1-col-1'
+            'row-1-col-2'
+            'row-1-col-3'
+            'row-2';
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .run-payroll-page .run-payroll .stage-5-wrapper .row-2{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto; 
+        grid-template-areas: 
+            'row-1-col-1'
+            'row-1-col-3'
+            'row-2-col-1' 
+            'row-2-col-2'
+            'row-2-col-3';
+    }
+    
+    .run-payroll-page .run-payroll .stage-5-wrapper .row-2 .row-1-col-3{
+        text-align: left;
+    }
 }
 
 [run-payroll-content] {
