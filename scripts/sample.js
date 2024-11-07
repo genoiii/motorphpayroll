@@ -98,3 +98,20 @@ function removeStageSucess(id){
     // currentStageIcon.innerHTML = document.getElementById().innerHTML
 }
 
+document.getElementById('cancel-button').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "flex";
+});
+
+document.querySelector('.close').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "none";
+});
+
+document.querySelector('.keep-editing').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "none";
+});
+
+document.querySelector('.discard-changes').addEventListener("click", function() {
+	// document.querySelector('.bg-modal').style.display = "none";
+    window.location.href = 'payroll.html';
+});
+
