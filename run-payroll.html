@@ -6,6 +6,9 @@
     <title>Run-Payroll | Admin Portal</title>
     <link rel="stylesheet" href="styles/style.css">
     <script type="text/javascript" src="scripts/sample.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     
     <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 
@@ -13,6 +16,29 @@
 </head>
 
 <body class="run-payroll-page">
+    <!-- Alert/Modal Section -->
+
+    <div class="alert hide">
+        <span class="fas fa-check-circle"></span>
+        <span class="msg">Successfully save as draft.</span>
+        <div class="close-btn">
+           <span class="fas fa-times"></span>
+        </div>
+     </div>    
+
+    <div class="bg-modal">
+        <div class="modal-contents">
+
+            <div class="close">+</div>
+            <h3>Discard payroll changes?</h3>
+            <p>You will lose all changes made to this payroll.</p>
+            <div class="modal-button-container">
+                <button class="keep-editing">Keep editing</button>
+                <button class="discard-changes">Discard changes</button>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Header -->
     <header class="header">
@@ -275,7 +301,7 @@
                         <td>
                             <p class="status">                                
                                 <span class="badge late-status">
-                                    <span class="dot danger"></span>
+                                    <span class="dot default"></span>
                                     Pending
                                 </span>
                             </p>                         
@@ -290,7 +316,7 @@
                         <td>
                             <p class="status">                                
                                 <span class="badge late-status">
-                                    <span class="dot danger"></span>
+                                    <span class="dot success"></span>
                                     Approved
                                 </span>
                             </p>                         
@@ -305,7 +331,7 @@
                         <td>
                             <p class="status">                                
                                 <span class="badge late-status">
-                                    <span class="dot danger"></span>
+                                    <span class="dot success"></span>
                                     Approved
                                 </span>
                             </p>                         
@@ -1099,10 +1125,28 @@
             <button id="button-previous" type="button" class="previous" run-payroll-nav>Previous</button>  
             <button id="button-next" type="button" class="next active" run-payroll-nav>Next</button>                      
         </div>
-        <a id="save-as-draft-button" href="payroll.html">Save as draft</a>
-    </div>
+        <a onclick="showAlert()" id="save-as-draft-button" href="#payroll.html">Save as draft</a>
+    </div>  
+     
     <footer class="footer">
         <p>&copy; 2020 MotorPH Payroll</p>
     </footer>
+
+
+    <script>
+        $('#save-as-draft-button').click(function(){
+          $('.alert').addClass("show");
+          $('.alert').removeClass("hide");
+          $('.alert').addClass("showAlert");
+          setTimeout(function(){
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+          },5000);
+        });
+        $('.close-btn').click(function(){
+          $('.alert').removeClass("show");
+          $('.alert').addClass("hide");
+        });
+     </script>
 </body>
 </html>
