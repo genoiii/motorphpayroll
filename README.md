@@ -12,3 +12,5 @@ Link to your updated project plan: https://docs.google.com/spreadsheets/d/1e4Co7
 Your project’s GitHub repository: https://github.com/genoiii/motorphpayroll.git
 
 Link to your project’s GitHub pages: https://genoiii.github.io/motorphpayroll/
+
+Test Case Document: https://docs.google.com/spreadsheets/d/1ckFjEGAViV5pP2RbdBQPHcKU-LwreMqOi5Rw8z6ZTbw/edit?usp=sharing
