@@ -267,7 +267,9 @@
             <table class="table">
                 <thead>                                                
                     <tr>
-                        <th class="fit"><input type="checkbox"></th>                        
+                        <th class="fit">
+                            <input type="checkbox" onchange="checkAll(this)">
+                        </th>                        
                         <th class="">Name</th>
                         <th class="">Total Hours</th>
                         <th class="">Overtime</th>
@@ -1120,12 +1122,12 @@
     </div>
 
     <div class="nav">
-        <a id="cancel-button" href="#cancel">Cancel</a>
+        <a id="cancel-button" href="#cancel" class="active" run-payroll-nav>Cancel</a>
         <div class="buttons">
             <button id="button-previous" type="button" class="previous" run-payroll-nav>Previous</button>  
             <button id="button-next" type="button" class="next active" run-payroll-nav>Next</button>                      
         </div>
-        <a onclick="showAlert()" id="save-as-draft-button" href="#payroll.html">Save as draft</a>
+        <a onclick="showAlert()" id="save-as-draft-button" class="active" href="#payroll.html" run-payroll-nav>Save as draft</a>
     </div>  
      
     <footer class="footer">
