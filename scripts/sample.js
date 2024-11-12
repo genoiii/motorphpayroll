@@ -1,7 +1,21 @@
 const buttonNext = document.getElementById('button-next')
 const buttonPrevious = document.getElementById('button-previous')
+const buttonCancel = document.getElementById('cancel-button')
+const buttonSaveAsDraft = document.getElementById('save-as-draft-button')
+const orignalNextButtonText = returnButtonText(buttonNext)
+const orignalPreviousButtonText = returnButtonText(buttonPrevious)
 
 buttonNext.addEventListener('click', () => {
+    const currentContent = document.querySelector('.run-payroll .active')
+    const nextContent = currentContent.nextElementSibling
+    if(currentContent.nextElementSibling === null){
+        window.location.href = 'payroll.html';
+    }
+
+    if(currentContent.id === "content-3"){
+        changeButtonText(buttonNext, 'Submit Payroll')
+    }
+
     const currentHeading = document.querySelector('.stages-heading .active')
     const nextHeading = currentHeading.nextElementSibling
 
@@ -15,28 +29,36 @@ buttonNext.addEventListener('click', () => {
 
     const previousSiblingSvgID = previousSibling.firstElementChild.id
     addStageSucess(previousSiblingSvgID)
-    console.log(previousSiblingSvgID)
 
     removeStageHighlight(previousSibling)
     addStageHighlight(nextSibling)
     hideElement(currentStageDescription)
-    displayElement(nextStageDescription)
-
-    const currentContent = document.querySelector('.run-payroll .active')
-    const nextContent = currentContent.nextElementSibling
+    displayElement(nextStageDescription)    
 
     hideElement(currentContent)
-    displayElement(nextContent)
+    displayElement(nextContent)    
 
     if(nextContent.nextElementSibling === null){
-        hideElement(buttonNext)
+        // hideElement(buttonNext)
+        changeButtonText(buttonNext, 'Finish Payroll')
+        changeButtonText(buttonPrevious, 'Rerun Payroll')
+        hideElement(buttonCancel)
+        hideElement(buttonSaveAsDraft)
+        changeElementStyleJustifyContent(document.querySelector('.run-payroll-page .nav'), 'center')
     }
+
     if(nextContent.previousElementSibling !== null){
         displayElement(buttonPrevious)
+        
     }
 })
 
 buttonPrevious.addEventListener('click', () => {
+    const currentContent = document.querySelector('.run-payroll .active')
+    const previousContent = currentContent.previousElementSibling
+
+    
+
     const currentHeading = document.querySelector('.stages-heading .active')
     const previousHeading = currentHeading.previousElementSibling
     hideElement(currentHeading)
@@ -49,15 +71,11 @@ buttonPrevious.addEventListener('click', () => {
 
     const previousPreviousSiblingSvgID = previousPreviousSibling.firstElementChild.id
     removeStageSucess(previousPreviousSiblingSvgID)
-    console.log(previousPreviousSiblingSvgID)
 
     removeStageHighlight(previousSibling)
     addStageHighlight(previousPreviousSibling)
     hideElement(currentStageDescription)
-    displayElement(previousStageDescription)
-
-    const currentContent = document.querySelector('.run-payroll .active')
-    const previousContent = currentContent.previousElementSibling
+    displayElement(previousStageDescription)    
 
     hideElement(currentContent)
     displayElement(previousContent)
@@ -67,8 +85,21 @@ buttonPrevious.addEventListener('click', () => {
     }
     if(previousContent.nextElementSibling !== null){
         displayElement(buttonNext)
+        changeButtonText(buttonPrevious, orignalPreviousButtonText)
+        changeButtonText(buttonNext, orignalNextButtonText)        
+        displayElement(buttonCancel)
+        displayElement(buttonSaveAsDraft)
+        changeElementStyleJustifyContent(document.querySelector('.run-payroll-page .nav'), 'space-between')
+    }
+
+    if(currentContent.id === "content-5"){
+        changeButtonText(buttonNext, 'Submit Payroll')
     }
 })
+
+function changeElementStyleJustifyContent(element, style){
+    element.style.justifyContent = style
+}
 
 function hideElement(element){
     element.classList.remove('active')
@@ -76,6 +107,14 @@ function hideElement(element){
 
 function displayElement(element){
     element.classList.add('active')
+}
+
+function changeButtonText(element, text){
+    element.innerHTML = text
+}
+
+function returnButtonText(element){
+    return element.innerHTML
 }
 
 function addStageHighlight(element){
@@ -98,7 +137,7 @@ function removeStageSucess(id){
     // currentStageIcon.innerHTML = document.getElementById().innerHTML
 }
 
-document.getElementById('cancel-button').addEventListener("click", function() {
+buttonCancel.addEventListener("click", function() {
 	document.querySelector('.bg-modal').style.display = "flex";
 });
 
@@ -114,4 +153,18 @@ document.querySelector('.discard-changes').addEventListener("click", function() 
 	// document.querySelector('.bg-modal').style.display = "none";
     window.location.href = 'payroll.html';
 });
+
+const checkboxes = document.querySelectorAll(".run-payroll .table input[type = 'checkbox']");
+function checkAll(myCheckbox){
+    if(myCheckbox.checked == true){
+        checkboxes.forEach(function(checkbox){
+            checkbox.checked = true;
+        });
+    }
+    else{
+        checkboxes.forEach(function(checkbox){
+            checkbox.checked = false;
+        });
+    }
+}
 
