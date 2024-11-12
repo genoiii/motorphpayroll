@@ -947,8 +947,13 @@ div:has(input:focus) > .search-bar label{
 .run-payroll .table tbody tr:last-of-type{
     border-bottom: 2px solid var(--default-color);
 }
+
 .run-payroll .table tbody tr:hover{
     background-color: var(--default-color);
+}
+
+.run-payroll .table input[type="checkbox"]{
+    cursor: pointer;
 }
 
 .run-payroll .table tbody svg{
@@ -1312,7 +1317,7 @@ div:has(input:focus) > .search-bar label{
     grid-area: nav;
     padding: 2em;
     display: flex;
-    justify-content:space-between
+    justify-content:space-between;
 }
 
 .run-payroll-page .nav a{
