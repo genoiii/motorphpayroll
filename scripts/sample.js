@@ -5,7 +5,17 @@ const buttonSaveAsDraft = document.getElementById('save-as-draft-button')
 const orignalNextButtonText = returnButtonText(buttonNext)
 const orignalPreviousButtonText = returnButtonText(buttonPrevious)
 
+function isAnyEmployeeSelected() {
+    const checkboxes = document.querySelectorAll(".run-payroll .table input[type='checkbox']");
+    return Array.from(checkboxes).some(checkbox => checkbox.checked);
+}
+
 buttonNext.addEventListener('click', () => {
+    if (!isAnyEmployeeSelected()) {
+        alert("Please select at least one employee.");
+        return;
+    }
+    
     const currentContent = document.querySelector('.run-payroll .active')
     const nextContent = currentContent.nextElementSibling
     if(currentContent.nextElementSibling === null){
